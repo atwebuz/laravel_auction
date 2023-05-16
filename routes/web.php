@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('home');
+    if(!false){
+        return redirect()->route('products.index');
+    }
 });
 
-Route::get('/show', function () {
-    return view('pages.show');
-});
+Route::resource('products', ProductController::class);
+
 
 Auth::routes();
 

@@ -12,7 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::orderBy('id','desc')->paginate(5);
+        return view('pages.index', compact('products'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('prpducts.create');
     }
 
     /**
@@ -28,7 +29,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
+        
+        Product::create($request->post());
+
+        return redirect()->route('products.index')->with('success','Product has been created successfully.');
     }
 
     /**
@@ -36,7 +46,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('pages.show',compact('product'));
     }
 
     /**
@@ -44,7 +54,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('pages.edit',compact('product'));
     }
 
     /**
@@ -52,7 +62,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
+        
+        $product->fill($request->post())->save();
+
+        return redirect()->route('products.index')->with('success','Product Has Been updated successfully');
     }
 
     /**
@@ -60,6 +79,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('companies.index')->with('success','Company has been deleted successfully');
     }
 }

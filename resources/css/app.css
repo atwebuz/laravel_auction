@@ -1,0 +1,39 @@
+.slider{
+    background-image: linear-gradient(to right bottom, #418dff, #0088c9, #00737b, #0b593c, #333d1e);    width: 100%;
+    padding: 200px 0;
+    text-align: center;
+}
+.bids_show{
+    width: 100%;
+    margin:20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.bids_show_box{
+    background: #333;
+    margin: 0 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+
+}
+.bids_show_box h3{
+    font-size: 22px;
+}
+
+.bids_show_box h2{
+    color: #fff;
+}
+
+.products{
+    margin-top: 40px;
+}
+.products_block{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    
+}
