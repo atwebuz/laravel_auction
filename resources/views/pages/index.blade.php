@@ -68,7 +68,11 @@
             <div class="card">
                 {{-- @dd($products) --}}
                 <a href="{{route('products.show',$product->id)}}">
-                    <img src="{{asset('no-image.avif')}}" class="card-img-top" alt="...">
+                    {{-- @dd($product->oneimage[0]->images) --}}
+                    <img class="img-fluid" src="{{count($product->oneimage)==1 ? asset('image/' . $product->oneimage[0]->images) : asset('image/no-image.avif')}}" alt="image not-found" />
+                    {{-- <img class="img-fluid" src="{{count($product->oneimage)==1 ? asset('image/' . $product->oneimage[0]->images) : asset('assets/images/no-image.png')}}" alt="image not-found" /> --}}
+
+                    {{-- <img src="{{asset('no-image.avif')}}" class="card-img-top" alt="..."> --}}
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">{{$product->title}}</h5>

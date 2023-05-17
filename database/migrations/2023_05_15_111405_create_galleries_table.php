@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained();
-            $table->text('rasm');
+            $table->text('images');
             $table->timestamps();
         });
     }
