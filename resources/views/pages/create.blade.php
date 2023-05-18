@@ -2,12 +2,15 @@
 
 @section('content')
 <section id="basic-input">
+    <div class="container">
+
     <div class="row">
         <div class="col-md-6 col-12">
             <div class="card" style="">
                 <div class="card-header">
                     <h4 class="card-title">{{__('Create')}}</h4>
                 </div>
+
                 <div class="card-content">
                     <div class="card-body">
                         <form class="form form-horizontal" action="{{route('products.store')}}"
@@ -170,7 +173,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-12 my-4">
                                         <div class="form-group row">
                                             <div class="col-md-4">
                                                 <span>{{__('Image')}}</span>
@@ -197,7 +200,8 @@
             </div>
             {{-- @include('../inc/__messages') --}}
         </div>
-    </div>
+    </div>         
+</div>
 </section>
 
 @endsection

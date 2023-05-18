@@ -13,7 +13,7 @@
                         {{-- <li data-target="#carousel-keyboard" data-slide-to="{{$loop->index}}" class=""></li> --}}
                     </ol>
                         <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                            <img class="img-fluid w-100" src="{{$image->images ? asset('image/' . $image->images) : asset('assets/images/no-image.avif')}}" alt="image not-founds" />
+                            <img class="img-fluids w-100" height="700px !important" src="{{$image->images ? asset('image/' . $image->images) : asset('assets/images/no-image.avif')}}" alt="image not-founds" />
                         </div>
                         @empty
                             
@@ -29,7 +29,7 @@
                     <h3 class="text-bold text-center ny-2">My Product Details</h3>
                     <div class="form-group">
                         <label class="font-weight-bold">{{__('Brand Name')}}</label>
-                        {{$product->brand->name}}
+                        {{$product->name}}
                     </div>
 
                  

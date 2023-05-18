@@ -123,8 +123,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        
-      
+        // dd($request);
+
         $this->validate($request, [
             'name' => 'required',
             'paragraph' => 'required',
@@ -141,6 +141,7 @@ class ProductController extends Controller
            
 
         ]);
+
 
 
         foreach($request->file('images') as $image) 
@@ -167,8 +168,9 @@ class ProductController extends Controller
     {
         // Gate::authorize('delete', $post);
 
+        
         $product->delete();
-         
+
         return redirect()->route('products.index')->with('success','waw it was deleted successfully');
     }
 
